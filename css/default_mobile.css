@@ -1,9 +1,85 @@
-/* 부트스트랩 기본 폰트가 16이라 기본폰트 15인 리버티스킨은 bootstrap 반응형 부분을 쓰기가 힘듬
-   그래서 그냥 px로 때려박는걸로
-*/
-
-/* Max-width: 1023 데스크탑 마지노선 */
 @media (max-width: 1023px) {
+    .toc {
+        background: #f8f9fa;
+        border: 1px solid #e1e8ed;
+        border-radius: 8px;
+        margin: 1rem 0;
+        padding: 0;
+        overflow: hidden;
+    }
+
+    .toc-title {
+        background: #e9ecef;
+        padding: 0.75rem 1rem;
+        margin: 0;
+        font-weight: bold;
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid #e1e8ed;
+        user-select: none;
+    }
+
+    .toc-title:hover {
+        background: #dee2e6;
+    }
+
+    .toc-title::after {
+        content: '▼';
+        font-size: 0.8rem;
+        transition: transform 0.3s ease;
+    }
+
+    .toc.collapsed .toc-title::after {
+        transform: rotate(-90deg);
+    }
+
+    .toc-content {
+        max-height: 300px;
+        overflow-y: auto;
+        transition: max-height 0.3s ease;
+        padding: 0.5rem 1rem 1rem 1rem;
+    }
+
+    .toc.collapsed .toc-content {
+        max-height: 0;
+        overflow: hidden;
+        padding: 0;
+    }
+
+    .toc ul {
+        margin: 0;
+        padding-left: 1rem;
+        list-style: none;
+    }
+
+    .toc ul ul {
+        margin-left: 1rem;
+    }
+
+    .toc li {
+        margin: 0.25rem 0;
+        line-height: 1.4;
+    }
+
+    .toc a {
+        text-decoration: none;
+        color: #0066cc;
+        font-size: 0.9rem;
+    }
+
+    .toc a:hover {
+        text-decoration: underline;
+    }
+
+    .toc .toc-h1 { font-weight: bold; }
+    .toc .toc-h2 { margin-left: 0.5rem; }
+    .toc .toc-h3 { margin-left: 1rem; }
+    .toc .toc-h4 { margin-left: 1.5rem; }
+    .toc .toc-h5 { margin-left: 2rem; }
+    .toc .toc-h6 { margin-left: 2.5rem; }
+
     .Clue .nav-wrapper .navbar {
         padding: 0 0.5rem;
     }
@@ -44,6 +120,7 @@
     .Clue .content-wrapper .clue-content .clue-content-header {
         display: flex;
         flex-direction: column-reverse;
+        align-items: stretch;
     }
 
     .Clue .content-wrapper .clue-content .clue-content-header .clue-notice {
@@ -53,7 +130,6 @@
     .Clue .content-wrapper .clue-content .clue-content-header .content-tools {
         text-align: right;
         padding: 0.5rem;
-        /* border-top: 1px solid #e1e8ed; */
         float: unset;
         overflow-x: auto;
         white-space: nowrap;
@@ -146,7 +222,31 @@
     }
 }
 
-/* Max-width: 798 메뉴 마지노선 테블릿 모드로 전환 시작하기위한 부분 */
+@media (max-width: 1023px) {
+    .thetree-dark-mode .toc {
+        background: #2d2f34;
+        border-color: #777;
+    }
+
+    .thetree-dark-mode .toc-title {
+        background: #383b40;
+        color: #ddd;
+        border-bottom-color: #777;
+    }
+
+    .thetree-dark-mode .toc-title:hover {
+        background: #4a4e52;
+    }
+
+    .thetree-dark-mode .toc a {
+        color: #E69720;
+    }
+
+    .thetree-dark-mode .toc a:hover {
+        color: #b3771d;
+    }
+}
+
 @media (max-width: 798px) {
     .Clue .nav-wrapper .navbar .navbar-nav .nav-item .fa {
         text-align: center;
@@ -163,7 +263,6 @@
     }
 }
 
-/* Max-width: 520px 테블릿 이하 시작 부분 */
 @media (max-width: 520px) {
     .Clue .nav-wrapper .navbar .navbar-nav .nav-item .nav-link {
         padding: 0.7rem 0.3rem;
@@ -194,15 +293,12 @@
     }
 }
 
-/* Max-width: 397px 대형폰 이하 시작 부분 */
 @media (max-width: 397px) {
     .Clue .nav-wrapper .navbar .navbar-brand {
         margin-left: var(--clue-navbar-logo-minimum-margin-left, 0) !important;
         margin: var(--clue-navbar-logo-minimum-margin, 0);
         width: var(--clue-navbar-logo-minimum-width, 5rem);
         margin-top: var(--clue-navbar-logo-minimum-margin-top, 0) !important;
-        /* 모바일에서 Libre 로고 나타내는 거 수정 */
-        /*background: transparent url(../img/logo.png?2015-12-18T21:00:00Z) no-repeat scroll left center/auto 1.5rem*/
     }
 
     .Clue .nav-wrapper .navbar .navbar-nav .nav-item .nav-link::after {

@@ -95,3 +95,55 @@ document.addEventListener('thetree:pageLoad', () => {
 document.addEventListener('thetree:configChange', () => {
     setStyles();
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+    if (window.innerWidth <= 1023) {
+        const toc = document.querySelector('.toc');
+        if (toc) {
+            const tocTitle = document.createElement('div');
+            tocTitle.className = 'toc-title';
+            tocTitle.textContent = '목차';
+            
+            const tocContent = document.createElement('div');
+            tocContent.className = 'toc-content';
+            
+            const existingContent = toc.innerHTML;
+            toc.innerHTML = '';
+            toc.appendChild(tocTitle);
+            tocContent.innerHTML = existingContent;
+            toc.appendChild(tocContent);
+            
+            toc.classList.add('collapsed');
+            
+            tocTitle.addEventListener('click', () => {
+                toc.classList.toggle('collapsed');
+            });
+        }
+    }
+});
+
+document.addEventListener('thetree:pageLoad', () => {
+    if (window.innerWidth <= 1023) {
+        const toc = document.querySelector('.toc');
+        if (toc) {
+            const tocTitle = document.createElement('div');
+            tocTitle.className = 'toc-title';
+            tocTitle.textContent = '목차';
+            
+            const tocContent = document.createElement('div');
+            tocContent.className = 'toc-content';
+            
+            const existingContent = toc.innerHTML;
+            toc.innerHTML = '';
+            toc.appendChild(tocTitle);
+            tocContent.innerHTML = existingContent;
+            toc.appendChild(tocContent);
+            
+            toc.classList.add('collapsed');
+            
+            tocTitle.addEventListener('click', () => {
+                toc.classList.toggle('collapsed');
+            });
+        }
+    }
+});

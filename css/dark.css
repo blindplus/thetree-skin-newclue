@@ -1,5 +1,6 @@
 body.thetree-dark-mode .clue,
 body.thetree-dark-mode {
+    --article-background-color: #1c1c1c;
 	background-color: black;
 	color-scheme: dark;
 	color: #ddd;
@@ -204,12 +205,22 @@ body.thetree-dark-mode {
 	background-color: var(--article-background-color);
 }
 
+.thetree-dark-mode .recent-head-title h3 {
+    color: #ddd;
+}
+
 .thetree-dark-mode .Clue .content-wrapper .clue-sidebar .clue-right-fixed .live-recent .live-recent-content {
 	background-color: var(--article-background-color);
 }
 
 .thetree-dark-mode .btn-recentchanges {
-	color: #ddd;
+    background-color: var(--article-background-color);
+    border-color: #777;
+    color: #ddd;
+}
+
+.thetree-dark-mode .btn-recentchanges:hover {
+    background-color: #383b40;
 }
 
 .thetree-dark-mode .Clue .content-wrapper .clue-sidebar .clue-right-fixed .live-recent .live-recent-content .live-recent-list li:hover {

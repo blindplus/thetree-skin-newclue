@@ -1,3 +1,15 @@
+.content-tools {
+    display: flex;
+    justify-content: flex-end;
+    padding: 1rem;
+    padding-bottom: 0;
+}
+
+.content-tools .btn-group {
+    display: inline-flex;
+    gap: 0;
+}
+
 @scope (.content-tools) {
     .tools-btn {
         font-size: 0.9rem;
