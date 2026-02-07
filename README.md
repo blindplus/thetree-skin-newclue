@@ -1,5 +1,5 @@
 ## 개요
-[VanillaDev/thetree-skin-clue](https://github.com/VanillaDev/thetree-skin-clue)를 Vue로 포팅한 버전입니다.
+[VaniIIaDev/thetree-skin-clue](https://github.com/VaniIIaDev/thetree-skin-clue)를 Vue로 포팅한 버전입니다.
 해당 스킨을 사용하시는 것에 대해 책임지지 않습니다.
 
 ## 원작
