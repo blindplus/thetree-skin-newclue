@@ -109,9 +109,9 @@
         </div>
       </div>
       <div id="content" class="container-fluid clue-content">
-        <div v-if="$store.state.config.sitenotice" id="site-notice" class="notification">
-          <span class="label"><span class="fa fa-solid fa-circle-exclamation notice-icon"></span> <span style="vertical-align: 4px;" v-html="$store.state.config.sitenotice"></span></span>
-        </div>
+            <div v-if="$store.state.config['wiki.sitenotice']" id="site-notice" class="notification">
+                    <span class="label" v-html="$store.state.config['wiki.sitenotice']" @click="onDynamicContentClick($event)" />
+            </div>
         <div class="clue-content-header">
           <content-tool />
           <div class="title">
