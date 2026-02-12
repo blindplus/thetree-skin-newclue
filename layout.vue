@@ -188,6 +188,9 @@
         </div>
 
         <div id="bottom" class="clue-footer">
+          <ul v-if="$store.state.page.viewName === 'wiki'" class="footer-info">
+              <li class="footer-info-copyright" v-html="$store.state.page.data.copyright_text"></li>
+          </ul>
           <ul class="footer-places" v-if="$store.state.config.footer_html" v-html="$store.state.config.footer_html"></ul>
           <ul class="footer-places" v-else></ul>
           <ul class="footer-icons">
