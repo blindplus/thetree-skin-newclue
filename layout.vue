@@ -320,6 +320,10 @@ export default {
       if (this.loginMenuOpen && !e.target.closest('.login-menu')) {
         this.loginMenuOpen = false;
       }
+      if ((this.menuOpen || this.loginMenuOpen) && e.target.closest('.dropdown-menu a')) {
+        this.menuOpen = false;
+        this.loginMenuOpen = false;
+      }
     },
     updateFooterRecentVisibility() {
       if (typeof window === 'undefined') return;

@@ -234,6 +234,10 @@ del, s, strike {
     padding: 0.2rem 0.4rem;
 }
 
+.Clue .nav-wrapper .navbar .form-inline .btn:hover {
+    background-color: #e2e6ea;
+}
+
 .Clue .nav-wrapper .navbar .form-inline .btn .fa {
     color: var(--clue-brand-color, #4188f1);
     width: 0.9rem;
@@ -435,6 +439,10 @@ del, s, strike {
     justify-content: space-between;
     align-items: center;
     width: 100%;
+}
+
+.Clue .content-wrapper .clue-sidebar .clue-right-fixed .live-recent .live-recent-content .live-recent-list .recent-item:hover {
+    text-decoration: none;
 }
 
 .Clue .content-wrapper .clue-sidebar .clue-right-fixed .live-recent .live-recent-content .live-recent-list .recent-item .new {

@@ -43,6 +43,7 @@ body.thetree-dark-mode {
 .thetree-dark-mode .Clue .content-wrapper .clue-sidebar .clue-right-fixed .live-recent .live-recent-footer,
 .thetree-dark-mode .Clue .content-wrapper .clue-sidebar .clue-right-fixed .live-recent .live-recent-content {
 	border-color: #777;
+    background-color: var(--article-background-color);
 }
 
 .thetree-dark-mode .btn.btn-secondary.tools-btn {
@@ -145,11 +146,9 @@ body.thetree-dark-mode {
 
 .thetree-dark-mode .Clue .nav-wrapper .navbar .form-inline .btn:focus,
 .thetree-dark-mode .Clue .nav-wrapper .navbar .form-inline .btn:hover {
-	background-color: #383b40;
-	border-color: #ddd;
-}
-
-.thetree-dark-mode div#bottom a {
+        background-color: #383b40;
+        border-color: transparent;
+}.thetree-dark-mode div#bottom a {
 	color: #E69720;
 }
 
@@ -202,14 +201,17 @@ body.thetree-dark-mode {
 }
 
 .thetree-dark-mode .recent-head-title {
-	background-color: var(--article-background-color);
+        background-color: var(--article-background-color);
+        border-bottom-color: #777;
+}
+
+.thetree-dark-mode .recent-head-title h3 span {
+    color: #ddd;
 }
 
 .thetree-dark-mode .recent-head-title h3 {
     color: #ddd;
-}
-
-.thetree-dark-mode .Clue .content-wrapper .clue-sidebar .clue-right-fixed .live-recent .live-recent-content {
+}.thetree-dark-mode .Clue .content-wrapper .clue-sidebar .clue-right-fixed .live-recent .live-recent-content {
 	background-color: var(--article-background-color);
 }
 
@@ -221,6 +223,7 @@ body.thetree-dark-mode {
 
 .thetree-dark-mode .btn-recentchanges:hover {
     background-color: #383b40;
+    border-color: transparent;
 }
 
 .thetree-dark-mode .Clue .content-wrapper .clue-sidebar .clue-right-fixed .live-recent .live-recent-content .live-recent-list li:hover {
@@ -237,4 +240,8 @@ body.thetree-dark-mode {
 
 .thetree-dark-mode .Clue .content-wrapper .clue-content .clue-content-header .content-tools .btn-group>.btn {
 	border-color: #777;
+}
+
+.thetree-dark-mode .Clue .nav-wrapper .navbar .navbar-nav .nav-item .nav-link:hover {
+    background-color: #383b40;
 }
