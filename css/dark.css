@@ -245,3 +245,20 @@ body.thetree-dark-mode {
 .thetree-dark-mode .Clue .nav-wrapper .navbar .navbar-nav .nav-item .nav-link:hover {
     background-color: #383b40;
 }
+
+.thetree-dark-mode .alert-danger {
+    color: #f8d7da;
+    background-color: #3e1619;
+    border-color: #5c1e23;
+}
+
+.thetree-dark-mode .alert-danger .btn-danger {
+    color: #fff;
+    background-color: #dc3545;
+    border-color: #dc3545;
+}
+
+.thetree-dark-mode .alert-danger .btn-danger:hover {
+    background-color: #c82333;
+    border-color: #bd2130;
+}
