@@ -1,5 +1,5 @@
 <template>
-  <div class="Clue">
+  <div class="Clue" :style="skinConfig">
     <div id="top"></div>
     <div class="nav-wrapper" :class="{ 'navbar-fixed-top': $store.state.localConfig['clue.fixed_navbar'] }">
       <nav class="navbar navbar-dark">
@@ -280,6 +280,28 @@ export default {
     requestable() {
       const page = this.$store.state.page;
       return page?.data?.editable === true && this.hasEditAclMessage && page?.viewName !== 'notfound';
+    },
+    brand_color() {
+        return this.selectByTheme(this.$store.state.config['skin.newclue.brand_color_1'] ?? '#4188f1', '#2d2f34');
+    },
+    skinConfig() {
+        return {
+            '--clue-brand-color': this.brand_color,
+            '--clue-brand-dark-color': this.selectByTheme(this.$store.state.config['skin.newclue.brand_dark_color_1'] ?? this.darkenColor(this.brand_color), '#16171a'),
+            '--clue-brand-bright-color': this.selectByTheme(this.$store.state.config['skin.newclue.brand_bright_color_1'] ?? this.lightenColor(this.brand_color), '#383b40'),
+            '--clue-navbar-logo-image': this.$store.state.config['skin.newclue.navbar_logo_image'] || (this.$store.state.config['wiki.logo_url'] && `url(${this.$store.state.config['wiki.logo_url']})`),
+            '--clue-navbar-logo-minimum-width': this.$store.state.config['skin.newclue.navbar_logo_minimum_width'],
+            '--clue-navbar-logo-width': this.$store.state.config['skin.newclue.navbar_logo_width'],
+            '--clue-navbar-logo-size': this.$store.state.config['skin.newclue.navbar_logo_size'],
+            '--clue-navbar-logo-padding': this.$store.state.config['skin.newclue.navbar_logo_padding'],
+            '--clue-navbar-logo-margin': this.$store.state.config['skin.newclue.navbar_logo_margin'],
+            '--brand-color-1': 'var(--clue-brand-color)',
+            '--brand-color-2': this.selectByTheme(this.$store.state.config['skin.newclue.brand_color_2'] ?? 'var(--clue-brand-color)', 'var(--clue-brand-color)'),
+            '--brand-bright-color-1': 'var(--clue-brand-bright-color)',
+            '--brand-bright-color-2': this.selectByTheme(this.$store.state.config['skin.newclue.brand_bright_color_2'] ?? 'var(--clue-brand-bright-color)', 'var(--clue-brand-bright-color)'),
+            '--text-color': this.selectByTheme('#373a3c', '#ddd'),
+            '--article-background-color': this.selectByTheme('#fff', '#1d2023'),
+        };
     }
   },
   watch: {
@@ -337,6 +359,31 @@ export default {
       } else {
         this.isFooterRecentVisible = sidebarSetting === 'footer';
       }
+    },
+    darkenColor(hex, percent=50) {
+        let r = parseInt(hex.substring(1, 3), 16);
+        let g = parseInt(hex.substring(3, 5), 16);
+        let b = parseInt(hex.substring(5, 7), 16);
+
+        r = Math.round(r * (1 - percent / 100));
+        g = Math.round(g * (1 - percent / 100));
+        b = Math.round(b * (1 - percent / 100));
+
+        return "#" + ((r < 16 ? "0" : "") + r.toString(16)) + ((g < 16 ? "0" : "") + g.toString(16)) + ((b < 16 ? "0" : "") + b.toString(16));
+    },
+    lightenColor(hex, percent=50) {
+        let r = parseInt(hex.substring(1, 3), 16);
+        let g = parseInt(hex.substring(3, 5), 16);
+        let b = parseInt(hex.substring(5, 7), 16);
+
+        r = Math.round(r + (255 - r) * (percent / 100));
+        g = Math.round(g + (255 - g) * (percent / 100));
+        b = Math.round(b + (255 - b) * (percent / 100));
+
+        return "#" + ((r < 16 ? "0" : "") + r.toString(16)) + ((g < 16 ? "0" : "") + g.toString(16)) + ((b < 16 ? "0" : "") + b.toString(16));
+    },
+    selectByTheme(light, dark) {
+        return this.$store.state.currentTheme === 'dark' ? dark : light;
     }
   },
   mounted() {
