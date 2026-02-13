@@ -213,6 +213,14 @@
         margin: 0 !important;
     }
 
+    .Clue .content-wrapper .footer-recent a {
+        text-decoration: none;
+    }
+
+    .Clue .content-wrapper .footer-recent .removed-recent {
+        text-decoration: line-through;
+    }
+
     .Clue .content-wrapper .clue-footer {
         border-radius: 0 !important;
     }
