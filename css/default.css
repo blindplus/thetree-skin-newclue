@@ -813,8 +813,8 @@ div.scroll-buttons a {
 }
 
 .btn-recentchanges {
-    border: 1px solid #4188f1;
-    background-color: #4188f1;
+    border: 1px solid var(--clue-brand-color);
+    background-color: var(--clue-brand-color);
     color: #fff !important;
     margin-top: 5px;
     margin-bottom: 5px;
@@ -831,8 +831,8 @@ div.scroll-buttons a {
 }
 
 .btn-recentchanges:hover, .btn-recentchanges:active, .btn-recentchanges:focus {
-    background-color: #2872e0;
-    border-color: #2872e0;
+    background-color: var(--clue-brand-dark-color);
+    border-color: var(--clue-brand-dark-color);
     color: #fff !important;
     text-decoration: none !important;
 }
